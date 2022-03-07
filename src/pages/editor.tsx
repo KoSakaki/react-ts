@@ -1,4 +1,3 @@
-import * as React from "react";
 import styled from "styled-components";
 import { useStateWithStrage } from "../hooks/use_state_with_strage";
 
