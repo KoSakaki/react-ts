@@ -6,6 +6,6 @@ export const useStateWithStrage = (init:string, key:string): [string, (s:string)
   const setValueWithStrage = (nextValue:string):viod => {
     setValue(nextValue);
     localStorage.setItem(key, nextValue);
- }
+  }
   return [value, setValueWithStrage];
 }

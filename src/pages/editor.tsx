@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useStateWithStrage } from "../hooks/use_state_with_strage";
+import ReactMarkdown from "react-markdown";
 
 const StorageKey = "pages/editor:text";
 
@@ -11,11 +12,13 @@ export const Editor: React.FC = () => {
       <Wrapper>
         <TextArea
           onChange={(event: any) => {
-            setText(event.target.valueedText);
+            setText(event.target.value);
           }}
           value={text}
-        />
-        <Preview>プレビューエリア</Preview>
+          />
+        <Preview>
+          <ReactMarkdown>{text}</ReactMarkdown>
+        </Preview>
       </Wrapper>
     </>
   );
