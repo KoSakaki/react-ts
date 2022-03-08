@@ -1,21 +1,21 @@
 import styled from "styled-components";
-import { useStateWithStrage } from "../hooks/use_state_with_strage";
+// import { useStateWithStrage } from "../hooks/use_state_with_strage";
+import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 
-const StorageKey = "pages/editor:text";
+// const StorageKey = "pages/editor:text";
 
 export const Editor: React.FC = () => {
-  const [text, setText] = useStateWithStrage("", StorageKey);
+  // const [text, setText] = useStateWithStrage("", StorageKey);
+  const [text, setText] = useState("");
   return (
     <>
       <Header>MarkdownEditor</Header>
       <Wrapper>
         <TextArea
-          onChange={(event: any) => {
-            setText(event.target.value);
-          }}
+          onChange={(event: any) => setText(event.target.value)}
           value={text}
-          />
+        />
         <Preview>
           <ReactMarkdown>{text}</ReactMarkdown>
         </Preview>
